@@ -17,6 +17,7 @@ var client = SNSClient(auth, function(err, message) {
 
 app.post('/receive', client);
 var test = function(req,res){
+	console.log('test');
 	console.log(req.body);
 	res.end('.');
 };
@@ -26,18 +27,3 @@ app.post('*',test);
 
 app.listen(config.port);
 console.log('SNS Endpoint is listenning',config.port,'port');
-
-// var SNS = new AWS.SNS();
-
-// function callback(err,data){
-// 	console.log('\n=====ERROR=====\n');
-// 	console.log(err);
-// 	console.log('\n=====DATA=====\n');
-// 	console.log(data);
-// }
-
-// SNS.subscribe({
-// 	TopicArn: config.TopicArn,
-// 	Protocol: 'http',
-// 	Endpoint: config.Endpoint
-// },callback);

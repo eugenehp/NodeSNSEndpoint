@@ -1,8 +1,8 @@
 {
 	"port":8080,
-	"TopicArn":"arn:aws:sns:eu-west-1:251797077264:celebvm-video-iphone-uploads",
+	"TopicArn":"arn:aws:sns:us-east-1:251797077264:celebvm-video-iphone-uploads",
 	"TopicOwner":"251797077264",
-	"Region":"eu-west-1",
-	"DisplayName":"celebvm",
-	"Endpoint":"http://54.228.210.47:8080"
+	"Region":"us-east-1",
+	"DisplayName":"celebvm-video",
+	"Endpoint":"http://54.228.210.47:8080/"
 }
