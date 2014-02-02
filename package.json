@@ -4,7 +4,8 @@
   "description": "Node.js SNS Endpoint",
   "main": "index.js",
   "dependencies": {
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "aws-sdk": "~2.0.0-rc9"
   },
   "devDependencies": {},
   "scripts": {

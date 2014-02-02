@@ -1,9 +1,12 @@
+var AWS = require('aws-sdk');
+AWS.config.loadFromPath('./credentials.json');
 var express = require('express');
 app = express();
 var port = 8080;
 
-app.get('/request',function(req,res){
-res.end('test');
+app.post('/receive',function(req,res){
+	console.log('Received',req.body);
+	res.end('test');
 });
 
 app.listen(port);
