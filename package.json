@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "express": "~3.4.8",
-    "aws-sdk": "~2.0.0-rc9"
+    "aws-sdk": "~2.0.0-rc9",
+    "aws-snsclient": "~0.2.0"
   },
   "devDependencies": {},
   "scripts": {

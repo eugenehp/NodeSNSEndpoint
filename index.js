@@ -1,13 +1,36 @@
 var AWS = require('aws-sdk');
-AWS.config.loadFromPath('./credentials.json');
+var SNSClient = require('aws-snsclient');
 var express = require('express');
-app = express();
-var port = 8080;
+var config = require('./config.json');
+AWS.config.loadFromPath('./credentials.json');
 
-app.post('/receive',function(req,res){
-	console.log('Received',req.body);
-	res.end('test');
+app = express();
+
+var auth = {
+    region: 'eu-west-1'
+  , account: '251797077264'
+  , topic: 'celebvm-video-iphone-uploads'
+}
+var client = SNSClient(auth, function(err, message) {
+    console.log(message);
 });
 
-app.listen(port);
-console.log('SNS Endpoint is listenning',port,'port');
+app.post('/receive', client);
+
+app.listen(config.port);
+console.log('SNS Endpoint is listenning',config.port,'port');
+
+// var SNS = new AWS.SNS();
+
+// function callback(err,data){
+// 	console.log('\n=====ERROR=====\n');
+// 	console.log(err);
+// 	console.log('\n=====DATA=====\n');
+// 	console.log(data);
+// }
+
+// SNS.subscribe({
+// 	TopicArn: config.TopicArn,
+// 	Protocol: 'http',
+// 	Endpoint: config.Endpoint
+// },callback);
