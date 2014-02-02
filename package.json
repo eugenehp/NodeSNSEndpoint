@@ -1,0 +1,28 @@
+{
+  "name": "NodeSNSEndpoint",
+  "version": "0.0.0",
+  "description": "Node.js SNS Endpoint",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~3.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eugenehp/NodeSNSEndpoint.git"
+  },
+  "keywords": [
+    "node",
+    "SNS",
+    "endpoint"
+  ],
+  "author": "www.eugenehp.tk",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/eugenehp/NodeSNSEndpoint/issues"
+  }
+}
