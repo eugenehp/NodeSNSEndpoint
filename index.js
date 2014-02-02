@@ -16,6 +16,13 @@ var client = SNSClient(auth, function(err, message) {
 });
 
 app.post('/receive', client);
+var test = function(req,res){
+	console.log(req.body);
+	res.end('.');
+};
+
+app.get('*',test);
+app.post('*',test);
 
 app.listen(config.port);
 console.log('SNS Endpoint is listenning',config.port,'port');
