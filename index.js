@@ -24,8 +24,18 @@ var test = function(req,res){
 app.post('/receive', test);
 app.get('*',test);
 app.post('*',test);
-app.get('/',test);
-app.post('/',test);
+app.get('/*',test);
+app.post('/*',test);
+
+app.post('/notification/url', function(req, res) {
+    var bodyarr = []
+    req.on('data', function(chunk){
+      bodyarr.push(chunk);
+    })  
+    req.on('end', function(){
+      console.log( bodyarr.join('') )
+    })  
+})
 
 app.listen(config.port);
 console.log('SNS Endpoint is listenning',config.port,'port');
