@@ -27,6 +27,9 @@ app.post('*',test);
 app.get('/*',test);
 app.post('/*',test);
 
+/*
+https://54.228.210.47/notification/url
+*/
 app.post('/notification/url', function(req, res) {
     var bodyarr = []
     req.on('data', function(chunk){
